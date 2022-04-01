@@ -1,4 +1,4 @@
-using PeopleMatchingApp.Data;
+using API.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

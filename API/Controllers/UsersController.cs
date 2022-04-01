@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using API.Data;
+using API.Entities;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using PeopleMatchingApp.Data;
-using PeopleMatchingApp.Entities;
 
-namespace PeopleMatchingApp.Controllers;
+namespace API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

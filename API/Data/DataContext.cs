@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PeopleMatchingApp.Entities;
+﻿using API.Entities;
+using Microsoft.EntityFrameworkCore;
 
-namespace PeopleMatchingApp.Data;
+namespace API.Data;
 
 public class DataContext : DbContext
 {
