@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { observable } from 'rxjs';
 import { User } from './_model/user';
 import { AccountService } from './_services/account.service';
 
