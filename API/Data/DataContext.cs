@@ -5,17 +5,17 @@ namespace API.Data;
 
 public class DataContext : DbContext
 {
-    protected readonly IConfiguration Configuration;
+    protected readonly IConfiguration _config;
 
-    public DataContext(IConfiguration configuration)
+    public DataContext(IConfiguration config)
     {
-        Configuration = configuration;
+        _config = config;
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
         // connect to mysql with connection string from app settings
-        var connectionString = Configuration.GetConnectionString("WebApiDatabase");
+        var connectionString = _config.GetConnectionString("WebApiDatabase");
         options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
     }
 
