@@ -1,1 +1,77 @@
-<p>member-detail works!</p>
+<div *ngIf="member" class="row mb-4">
+  <div class="col-4">
+    <div class="card">
+      <img
+        src="{{ member.photoUrl || './assets/user.png' }}"
+        alt="{{ member.knownAs }}"
+        class="card-img-top img-thumbnail"
+      />
+      <div class="card-body">
+        <!-- <div class="mb-2" *ngIf="(presence.onlineUsers$ | async).includes(member.username)" >
+                    <i class="fa fa-user-circle text-success"></i> Online now
+                </div> -->
+        <div>
+          <strong>Location:</strong>
+          <p>{{ member.city }}, {{ member.country }}</p>
+        </div>
+        <div>
+          <strong>Age:</strong>
+          <p>{{ member.age }}</p>
+        </div>
+        <div>
+          <strong>Last Active:</strong>
+          <p>{{ member.lastActive }}</p>
+        </div>
+        <div>
+          <strong>Member since:</strong>
+          <p>{{ member.created | date: "dd MMM yyyy" }}</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="btn-group d-flex">
+          <button class="btn btn-primary">Like</button>
+          <!-- <button (click)="selectTab(3)" class="btn btn-success">Message</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-8">
+    <ul ngbNav #nav="ngbNav" class="nav-tabs">
+      <li [ngbNavItem]="1">
+        <a ngbNavLink>About {{ member.knownAs }}</a>
+        <ng-template ngbNavContent>
+          <h4>Description</h4>
+          <p>{{ member.introduction }}</p>
+          <h4>Looking for</h4>
+          <p>{{ member.lookingFor }}</p>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="2">
+        <a ngbNavLink>Interests</a>
+        <ng-template ngbNavContent>
+          <h4>Interests</h4>
+          <p>{{ member.interests }}</p>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="3">
+        <a ngbNavLink>Photos</a>
+        <ng-template ngbNavContent>
+          <ngx-gallery
+            [options]="galleryOptions"
+            [images]="galleryImages"
+            style="display: inline-block; margin-bottom: 20px"
+          ></ngx-gallery>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="4">
+        <a ngbNavLink>Messages</a>
+        <ng-template ngbNavContent>
+          <!-- <app-member-messages [username]="member.username"></app-member-messages> -->
+        </ng-template>
+      </li>
+    </ul>
+
+    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+  </div>
+</div>
