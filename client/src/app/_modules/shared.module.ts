@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [],
@@ -11,7 +12,8 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
       positionClass: 'toast-bottom-right',
     }),
     NgxGalleryModule,
+    NgxSpinnerModule,
   ],
-  exports: [ToastrModule, NgxGalleryModule],
+  exports: [ToastrModule, NgxGalleryModule, NgxSpinnerModule],
 })
 export class SharedModule {}
